@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar todas las listas ul> que están dentro de las cajas .box y agregarles
+        una clase CSS llamada "highlight"</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .highlight {
+            background-color: rgb(175, 17, 96);
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <p>Elemento 1</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+        <div class="box">
+            <p>Elemento 2</p>
+            <ul>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".box:has(ul)").addClass("highlight");
+        });
+    </script>
+</body>
+</html>

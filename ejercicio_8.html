@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crea una lista desplegable (select) con opciones. Utiliza eventos para mostrar
+    información adicional sobre la opción seleccionada en DIV que esté al lado</title>
+</head>
+<body>
+  <h1>OPCIONES</h1>
+  <select id="opciones">
+    <option value="opcion1">Opción 1</option>
+    <option value="opcion2">Opción 2</option>
+    <option value="opcion3">Opción 3</option>
+  </select>
+  <div id="informacionAdicional"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+  
+
+  <script >
+  
+     $(document).ready(function() {
+    // Manejador de evento para cambiar la selección
+    $("#opciones").change(function() {
+      var opcionSeleccionada = $(this).val();
+  
+      // Limpia la información adicional
+      $("#informacionAdicional").empty();
+  
+      // Muestra información adicional según la opción seleccionada
+      switch (opcionSeleccionada) {
+        case "opcion1":
+          $("#informacionAdicional").text("Esta es la información adicional de la Opción 1.");
+          break;
+        case "opcion2":
+          $("#informacionAdicional").text("Aquí tienes detalles de la Opción 2.");
+          break;
+        case "opcion3":
+          $("#informacionAdicional").text("Información adicional para la Opción 3.");
+          break;
+        default:
+          $("#informacionAdicional").text("Selecciona una opción para ver información adicional.");
+      }
+    });
+  }); </script>
+</body>
+</html>

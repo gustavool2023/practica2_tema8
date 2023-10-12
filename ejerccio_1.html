@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar el primer y último elemento hijo p dentro del contenedor .
+    container y cambiar su color de texto a rojo</title>
+
+</head>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+
+<body>
+  
+        <div class="container">
+            <p>Este es un párrafo</p>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+            </ul>
+            <p>Otro párrafo</p>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+              // Selecciona el primer y último elemento hijo <p> dentro de .container
+              $(".container > p:first-child, .container > p:last-child").css("color", "red");
+            });
+          </script>
+</body>
+</html>
+

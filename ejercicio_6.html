@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar un evento click a cada botón de manera que cuando se haga clic en un
+    botón, se muestre un mensaje en una alerta que diga "¡Hiciste clic en el Botón X!",
+    donde X es el número del botón.</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Agregar un evento click a todos los botones con la clase "boton"
+      $(".boton").click(function() {
+        // Obtener el número del botón haciendo referencia al índice del botón en la colección de elementos
+        var numeroBoton = $(".boton").index(this) + 1;
+        
+       
+        alert("¡Hiciste clic en el Botón " + numeroBoton + "!");
+      });
+    });
+  </script>
+</head>
+<body>
+  <button class="boton">Botón 1</button>
+  <button class="boton">Botón 2</button>
+  <button class="boton">Botón 3</button>
+  
+</body>
+</html>

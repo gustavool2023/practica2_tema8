@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Dependientes con jQuery</title>
+</head>
+<body>
+  
+  <label for="paises">Selecciona un país:</label>
+  <select id="paises">
+    <option value="Argentina">Argentina</option>
+    <option value="Brasil">Brasil</option>
+    <option value="mexico">México</option>
+  </select>
+
+  <label for="ciudades">Selecciona una ciudad:</label>
+  <select id="ciudades">
+    <!-- Opciones se agregarán dinámicamente aquí -->
+  </select>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+          $(document).ready(function() {
+  // Definir un objeto con ciudades relacionadas a los países
+  var ciudadesPorPais = {
+    Argentina: ["General Pico", "Venado Tuerto", "Cordoba"],
+    Brasil: ["Rio de Janeiro", "San Paulo", "San JOSE"],
+    mexico: ["Ciudad de México", "Guadalajara", "Monterrey"]
+  };
+
+  // Función para actualizar las opciones de la lista de ciudades
+  function actualizarCiudades(paisSeleccionado) {
+    var ciudades = ciudadesPorPais[paisSeleccionado] || [];
+
+    // Limpiar las opciones actuales
+    $("#ciudades").empty();
+
+    // Agregar las nuevas opciones
+    $.each(ciudades, function(index, ciudad) {
+      $("#ciudades").append("<option value='" + ciudad + "'>" + ciudad + "</option>");
+    });
+  }
+
+  // Evento de cambio en la selección de países
+  $("#paises").change(function() {
+    var paisSeleccionado = $(this).val();
+    actualizarCiudades(paisSeleccionado);
+  });
+
+  // Inicialmente, cargar las ciudades para el país seleccionado por defecto
+  var paisPorDefecto = $("#paises").val();
+  actualizarCiudades(paisPorDefecto);
+});
+  
+  </script>
+</body>
+</html>

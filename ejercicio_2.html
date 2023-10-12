@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seleccionar todos los elementos span> que están dentro de un div> que, 
+    a su vez, está dentro de un p> y cambiar su color de fondo a amarill</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</head>
+<body>
+
+<div class="parent">
+  <p>Parrafo 1</p>
+    <div>
+      <span>Texto 1</span>
+      <span>Texto 2</span>
+    </div>
+  
+  <p>Parrafo 2 </p>
+    <div>
+      <span>Texto 3</span>
+      <span>Texto 4</span>
+    </div>
+</div>
+
+  <script>
+    $(document).ready(function() {
+      
+      $("span").css("background-color", "yellow");
+    });
+  </script>
+</body>
+</html>
